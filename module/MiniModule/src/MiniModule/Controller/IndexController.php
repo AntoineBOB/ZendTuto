@@ -28,7 +28,7 @@ class IndexController extends AbstractActionController
                 return $vm;
             }
         }
-        $form->setAttribute('action', $this->url()->fromRoute('defaults', array('action' => 'form' )) );
+        $form->setAttribute('action', $this->url()->fromRoute('defaults', array('action' => 'traite' )) );
         return array( 'form' => $form );
     }
     
