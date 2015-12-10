@@ -12,7 +12,7 @@
                 "zendframework/zend-serializer":"2.*",
                 "zendframework/zend-log":"2.*",
                 "zendframework/zend-I18n":"2.*",
-                "gowsram/g-maps": "dev-master"
+                "components/bootstrap" :" 2.*"
                 
 	}
 }

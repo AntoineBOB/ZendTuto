@@ -12,7 +12,7 @@ return array(
                     )
                 )
             ),
-            'form' => array(
+            'defaults' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route' => '/form',
@@ -29,7 +29,8 @@ return array(
             'error' => __DIR__ . '/../view/error.phtml',
             'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
             'mini-module/index/index' => __DIR__ . '/../view/minimodule/index/index.phtml',
-            'mini-module/index/form' => __DIR__. '/../view/minimodule/index/form.phtml'
+            'mini-module/index/form' => __DIR__. '/../view/minimodule/index/form.phtml',
+            'mini-module/index/traite' => __DIR__. '/../view/minimodule/index/traite.phtml'
         ),
     ),
     'controllers' => array(
