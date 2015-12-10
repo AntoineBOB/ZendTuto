@@ -14,6 +14,8 @@ class IndexController extends AbstractActionController
     }
     
     public function formAction(){
-        
+        $services = $this->getServiceLocator();      
+        $form = $services->get('MiniModule\Form\Authentification');
+        return array( 'form' => $form );
     }
 }

@@ -1,5 +1,7 @@
 <b>Authentification</b>
-<form action="/traite" method="get">
-    Login : <input type="text" size="20" name="log"/>
-    <input type="submit" value="Suite"/>
-</form> 
+<?php
+$form = $this->form;
+$form->prepare();
+// fixe l'action du formulaire à l'aide du View Helper Url (route, params)
+$form->setAttribute('action', $this->url('form', array('action' => 'form' )) );
+echo $this->form($form);
