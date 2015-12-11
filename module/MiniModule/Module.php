@@ -20,7 +20,7 @@ class Module implements ConfigProviderInterface, BootstrapListenerInterface, Aut
         $event->attach(MvcEvent::EVENT_DISPATCH_ERROR, function (MvcEvent $e) {
             error_log('DISPATCH_ERROR : ' . $e->getError());
             error_log($e->getControllerClass() . ' ' . $e->getController());
-            error_log("Exception :".$e->getParam("exception")->getMessage());
+            //error_log("Exception :".$e->getParam("exception")->getMessage());
         });
         $event->attach(MvcEvent::EVENT_RENDER_ERROR, function (MvcEvent $e) {
             error_log('RENDER_ERROR : ' . $e->getError());

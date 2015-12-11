@@ -44,6 +44,11 @@ return array(
                     'name' => 'Zend\I18n\Validator\Alpha',
                 ),
             ),
+            'filters' => array(
+                array(
+                  'name' => 'Zend\I18n\Filter\Alpha'
+                ),
+            ),
         ),
     ),
 );
