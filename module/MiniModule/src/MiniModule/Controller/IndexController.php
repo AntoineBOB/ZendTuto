@@ -18,7 +18,6 @@ class IndexController extends AbstractActionController
     public function formAction(){
         $services = $this->getServiceLocator();      
         $form = $services->get('MiniModule\Form\Authentification');
-        
         if ( $this->getRequest()->isPost() ) {
             $form->setData( $this->getRequest()->getPost());
             if ($form->isValid()) {
@@ -28,7 +27,8 @@ class IndexController extends AbstractActionController
                 return $vm;
             }
         }
-        $form->setAttribute('action', $this->url()->fromRoute('defaults', array('action' => 'traite' )) );
+        //$form->setAttribute('action', $this->url()->fromRoute('form', array('action' => 'form' )) );
+        //$form->setAttribute('action', '/form' );
         return array( 'form' => $form );
     }
     

@@ -12,7 +12,7 @@ return array(
                     )
                 )
             ),
-            'defaults' => array(
+            'form' => array(
                 'type' => 'Zend\Mvc\Router\Http\Literal',
                 'options' => array(
                     'route' => '/form',
