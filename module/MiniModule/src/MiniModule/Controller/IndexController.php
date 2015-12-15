@@ -10,16 +10,6 @@ use Zend\View\Model\ViewModel;
  */
 class IndexController extends AbstractActionController
 {
-    public function onDispatch(MvcEvent $e)
-    {
-        $services = $this->getServiceLocator();
-        $form = $services->get('MiniModule\Form\Authentification');
-        $layout = $this->layout();
-        $formViewManager = new ViewModel( array( 'form' => $form ) );
-        $formViewManager->setTemplate( 'layout/form-auth');
-        $layout->addChild( $formViewManager, 'formulaireAuth');
-        parent::onDispatch($e);
-    }
     public function indexAction()
     {
         return array();
