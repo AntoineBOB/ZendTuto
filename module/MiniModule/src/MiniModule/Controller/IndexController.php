@@ -1,7 +1,7 @@
 <?php
 namespace MiniModule\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Form\Form;
+use Zend\Mvc\MvcEvent;
 use Zend\View\Model\ViewModel;
 /**
  * Class IndexController
@@ -10,13 +10,23 @@ use Zend\View\Model\ViewModel;
  */
 class IndexController extends AbstractActionController
 {
+    public function onDispatch(MvcEvent $e)
+    {
+        $services = $this->getServiceLocator();
+        $form = $services->get('MiniModule\Form\Authentification');
+        $layout = $this->layout();
+        $formViewManager = new ViewModel( array( 'form' => $form ) );
+        $formViewManager->setTemplate( 'layout/form-auth');
+        $layout->addChild( $formViewManager, 'formulaireAuth');
+        parent::onDispatch($e);
+    }
     public function indexAction()
     {
-        return array('nom'=>'tintin');
+        return array();
     }
-    
-    public function formAction(){
-        $services = $this->getServiceLocator();      
+    public function formAction()
+    {
+        $services = $this->getServiceLocator();
         $form = $services->get('MiniModule\Form\Authentification');
         if ( $this->getRequest()->isPost() ) {
             $form->setData( $this->getRequest()->getPost());
@@ -27,16 +37,6 @@ class IndexController extends AbstractActionController
                 return $vm;
             }
         }
-        $layout = $this->layout();
-        $formViewManager = new ViewModel( array( 'form' => $form ) );
-        $formViewManager->setTemplate( 'layout/form-auth');
-        $layout->addChild( $formViewManager, 'formulaireAuth');
-        return array( );
-        //return array( 'form' => $form );
+        return array( ); // ici le viewManager est celui par défaut il est initialisé avec les valeurs retournées
     }
-    
-    /*public function traiteAction(){
-        return array( 'login' => $_GET['log'] );
-    }*/
-
 }
