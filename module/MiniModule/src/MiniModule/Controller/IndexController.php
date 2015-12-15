@@ -27,13 +27,16 @@ class IndexController extends AbstractActionController
                 return $vm;
             }
         }
-        //$form->setAttribute('action', $this->url()->fromRoute('form', array('action' => 'form' )) );
-        //$form->setAttribute('action', '/form' );
-        return array( 'form' => $form );
+        $layout = $this->layout();
+        $formViewManager = new ViewModel( array( 'form' => $form ) );
+        $formViewManager->setTemplate( 'layout/form-auth');
+        $layout->addChild( $formViewManager, 'formulaireAuth');
+        return array( );
+        //return array( 'form' => $form );
     }
     
-    public function traiteAction(){
+    /*public function traiteAction(){
         return array( 'login' => $_GET['log'] );
-    }
+    }*/
 
 }

@@ -23,6 +23,15 @@ return array(
                     'value' => 'Suite',
                 ),
             ),
-        ),       
+        ),
+        array(
+            'spec' => array(
+                'type' => 'Zend\Form\Element\Submit',
+                'name' => 'Inscription',
+                'attributes' => array(
+                    'value' => 'Inscrit toi',
+                ),
+            ),
+        ),
     ),
 );

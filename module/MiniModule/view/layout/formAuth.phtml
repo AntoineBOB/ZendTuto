@@ -1,0 +1,26 @@
+<?php
+// on customise le formulaire pour l'affichage
+$form = $this->form;
+$auth = $form->get('log');
+$auth->setAttribute( 'class', 'form-control');
+$mdp = $form->get('mdp');
+$mdp->setAttribute( 'class', 'form-control');
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-success');
+$inscrire = $form->get('Inscription');
+$inscrire->setAttribute('class', 'btn btn-primary');
+$form->setAttributes( array(
+    'action' => $this->url('form', array('action' => 'form' )),
+    'class' => 'navbar-form navbar-right',
+    )
+);
+$form->prepare();
+// on affiche
+echo $this->form()->openTag($form);
+echo '<div class="form-group">';
+echo $this->formText($auth)." ";
+echo $this->formPassword($mdp)." ";
+echo $this->formButton()->render( $submit, 'Se Connecter' ).' ';
+echo $this->formButton()->render( $inscrire, 'S\'inscrire' );
+echo '</div>';
+echo $this->form()->closeTag();

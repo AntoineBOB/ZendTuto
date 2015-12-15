@@ -12,7 +12,8 @@
                 "zendframework/zend-serializer":"2.*",
                 "zendframework/zend-log":"2.*",
                 "zendframework/zend-I18n":"2.*",
-                "components/bootstrap" :" 2.*"
+                "components/bootstrap" :" 2.*",
+                "components/jquery" : "2.*"
                 
 	}
 }

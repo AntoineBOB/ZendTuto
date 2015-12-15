@@ -30,7 +30,8 @@ return array(
             'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
             'mini-module/index/index' => __DIR__ . '/../view/minimodule/index/index.phtml',
             'mini-module/index/form' => __DIR__. '/../view/minimodule/index/form.phtml',
-            'mini-module/index/traite' => __DIR__. '/../view/minimodule/index/traite.phtml'
+            'mini-module/index/traite' => __DIR__. '/../view/minimodule/index/traite.phtml',
+            'layout/form-auth' => __DIR__ . '/../view/layout/formAuth.phtml',
         ),
     ),
     'controllers' => array(
